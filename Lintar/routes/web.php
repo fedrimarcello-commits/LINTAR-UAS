@@ -1,7 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
+
+Route::get('/login', [LoginController::class, 'tampilkanLogin']);
+Route::post('/login', [LoginController::class, 'prosesLogin']);
+
+Route::get('/menu', [LoginController::class, 'menuUtama']);
+
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/register', [LoginController::class, 'tampilkanRegister']);
+Route::post('/register', [LoginController::class, 'prosesRegister']);

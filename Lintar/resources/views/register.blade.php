@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buat Akun Lintar</title>
+</head>
+<body>
+    <h1>Buat Akun</h1>
+
+    <form method="POST" action="/register">
+        @csrf 
+        Nama Lengkap: <br>
+        <input type="text" name="nama" required><br><br>
+        Email: <br>
+        <input type="email" name="email" required><br><br>
+        Password: <br>
+        <input type="password" name="password" required><br><br>
+        <button type="submit">Daftar Sekarang</button>
+    </form>
+    <br>
+    <a href="/login">Sudah punya akun? Kembali ke Login</a>
+</body>
+</html>
