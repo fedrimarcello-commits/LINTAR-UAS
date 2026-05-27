@@ -16,3 +16,5 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/register', [LoginController::class, 'tampilkanRegister']);
 Route::post('/register', [LoginController::class, 'prosesRegister']);
+
+Route::get('/nilai-uts', [LoginController::class, 'lihatNilaiUTS']);

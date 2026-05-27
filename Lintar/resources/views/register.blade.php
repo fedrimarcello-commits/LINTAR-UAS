@@ -6,6 +6,10 @@
 <body>
     <h1>Buat Akun</h1>
 
+    @if(session('Errorp'))
+        <p>{{ session('Errorp') }}</p>
+    @endif
+
     <form method="POST" action="/register">
         @csrf 
         Nama Lengkap: <br>
