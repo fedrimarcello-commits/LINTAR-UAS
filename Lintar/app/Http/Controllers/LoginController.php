@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\NilaiController;
 
 class LoginController extends Controller
 {
@@ -67,72 +68,8 @@ class LoginController extends Controller
         $user_baru->password = $request->password;
         $user_baru->save();
 
-        //Data Nilai ini adalah ada dummy yang langsung dibuat untuk jadi contoh Demo saja, karena siswa tidak input nilai
-        $nilai1 = new \App\Models\NilaiUts(); 
-        $nilai1->nama_mahasiswa = $request->nama; 
-        $nilai1->kode_mk = 'TK13034';
-        $nilai1->nama_mk = 'OPERATING SYSTEMS';
-        $nilai1->sks = 2;
-        $nilai1->nilai = '90.00';
-        $nilai1->save();
-
-        $nilai2 = new \App\Models\NilaiUts();
-        $nilai2->nama_mahasiswa = $request->nama; 
-        $nilai2->kode_mk = 'TK23007';
-        $nilai2->nama_mk = 'DATA STRUCTURES';
-        $nilai2->sks = 4;
-        $nilai2->nilai = '70.00';
-        $nilai2->save();
-
-        $nilai3 = new \App\Models\NilaiUts();
-        $nilai3->nama_mahasiswa = $request->nama; 
-        $nilai3->kode_mk = 'TK13030';
-        $nilai3->nama_mk = 'NUMERICAL METHOD';
-        $nilai3->sks = 4;
-        $nilai3->nilai = null;
-        $nilai3->save();
-
-        $nilai4 = new \App\Models\NilaiUts();
-        $nilai4->nama_mahasiswa = $request->nama; 
-        $nilai4->kode_mk = 'TK13038';
-        $nilai4->nama_mk = 'ALGEBRA & DISCRETE MATHEMATICS';
-        $nilai4->sks = 4;
-        $nilai4->nilai = '85.00';
-        $nilai4->save();
-
-        $nilai5 = new \App\Models\NilaiUts();
-        $nilai5->nama_mahasiswa = $request->nama; 
-        $nilai5->kode_mk = 'TK13039';
-        $nilai5->nama_mk = 'INTRODUCTION TO ARTIFICIAL INTELLIGENCE';
-        $nilai5->sks = 2;
-        $nilai5->nilai = '85.00';
-        $nilai5->save();
-
-        $nilai6 = new \App\Models\NilaiUts();
-        $nilai6->nama_mahasiswa = $request->nama; 
-        $nilai6->kode_mk = 'TK23022';
-        $nilai6->nama_mk = 'BACK-END PROGRAMMING';
-        $nilai6->sks = 4;
-        $nilai6->nilai = '87.00';
-        $nilai6->save();
+        NilaiController::membuatNilaiUTS($request->nama);
 
         return redirect('/login')->with('Sukses', 'Akun berhasil dibuat, Silakan login');
-    }
-
-    public function lihatNilaiUTS()
-    {
-        if (session('user_aktif') == null) {
-            return redirect('/login');
-        }
-        $nama_login = session('user_aktif');
-        $semua_nilai = \App\Models\NilaiUts::all();
-
-        $nilai_saya = [];
-        foreach ($semua_nilai as $item) {
-            if ($item->nama_mahasiswa == $nama_login) {
-            $nilai_saya[] = $item;
-            }
-        }
-        return view('nilai-uts', ['data_nilai' => $nilai_saya]);
     }
 }
