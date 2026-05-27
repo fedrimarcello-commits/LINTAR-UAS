@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\NilaiController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -17,4 +18,4 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [LoginController::class, 'tampilkanRegister']);
 Route::post('/register', [LoginController::class, 'prosesRegister']);
 
-Route::get('/nilai-uts', [LoginController::class, 'lihatNilaiUTS']);
+Route::get('/nilai-uts', [NilaiController::class, 'lihatNilaiUTS']);
