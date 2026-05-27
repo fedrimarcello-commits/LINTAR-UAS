@@ -6,8 +6,8 @@
     <body>
     <h1>Login</h1>
 
-    @if(session('error'))
-        <p style="color: red;">{{ session('Error') }}</p>
+    @if(session('Error'))
+        <p>{{ session('Error') }}</p>
     @endif
 
     <form method="POST" action="/login">
@@ -18,6 +18,7 @@
         <input type="password" name="password" required><br><br>
         <button type="submit">Masuk</button>
     </form>
-    
+    <br>
+    <p><a href="/register">Belum Punya Akun ? Buat akun baru</a></p>
     </body>
 </html>
