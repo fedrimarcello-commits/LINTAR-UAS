@@ -12,12 +12,12 @@ class NilaiController extends Controller
         if (session('user_aktif') == null) {
             return redirect('/login');
         }
-        $nama_login = session('user_aktif');
+        $nim_login = session('nim_aktif');
         $semua_nilai = \App\Models\NilaiUts::all();
 
         $nilai_saya = [];
         foreach ($semua_nilai as $item) {
-            if ($item->nama_mahasiswa == $nama_login) {
+            if ($item->nim == $nim_login) {
             $nilai_saya[] = $item;
             }
         }
@@ -25,7 +25,7 @@ class NilaiController extends Controller
     }
 
      //Data Nilai ini adalah ada dummy yang langsung dibuat untuk jadi contoh Demo saja, karena siswa tidak input nilai
-        public static function membuatNilaiUTS($nama_mahasiswa)
+        public static function membuatNilaiUTS($nim)
     {
         $data_nilai = [
             ['kode' => 'TK13034', 'nama_mk' => 'OPERATING SYSTEMS', 'sks' => 2, 'nilai' => '90.00'],
@@ -38,7 +38,7 @@ class NilaiController extends Controller
 
         foreach ($data_nilai as $mk) {
             $nilai = new \App\Models\NilaiUts(); 
-            $nilai->nama_mahasiswa = $nama_mahasiswa; 
+            $nilai->nim = $nim; 
             $nilai->kode_mk = $mk['kode'];
             $nilai->nama_mk = $mk['nama_mk'];
             $nilai->sks = $mk['sks'];

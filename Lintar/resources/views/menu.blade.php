@@ -16,6 +16,10 @@
             <td>1</td>
             <td><a href="/nilai-uts">Nilai UTS</a></td>
         </tr>
+        <tr>
+            <td>2</td>
+            <td><a href="/nilai-khs">Nilai KHS</a></td>
+        </tr>
     </table>
     <br>
 
