@@ -20,6 +20,9 @@
             <td>2</td>
             <td><a href="/nilai-khs">Nilai KHS</a></td>
         </tr>
+            <td>3</td>
+            <td><a href="/kalender">Kalender Akademik</a></td>
+        </tr>
     </table>
     <br>
 
