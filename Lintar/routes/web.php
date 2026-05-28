@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\KhsController;
+use App\Http\Controllers\KehadiranController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -22,3 +23,5 @@ Route::post('/register', [LoginController::class, 'prosesRegister']);
 Route::get('/nilai-uts', [NilaiController::class, 'lihatNilaiUTS']);
 
 Route::get('/nilai-khs', [KhsController::class, 'lihatKHS']);
+
+Route::get('/kehadiran', [KehadiranController::class, 'lihatKehadiran']);

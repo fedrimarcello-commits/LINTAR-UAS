@@ -78,6 +78,7 @@ class LoginController extends Controller
 
         NilaiController::membuatNilaiUTS($request->nim);
         KhsController::membuatNilaiKHS($request->nim);
+        KehadiranController::membuatKehadiran($request->nim);
 
         return redirect('/login')->with('Sukses', 'Akun berhasil dibuat, Silakan login');
     }
