@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\NilaiUts;
 
-class NilaiController extends Controller
+class UtsController extends Controller
 {
         public function lihatNilaiUTS() {
         if (session('user_aktif') == null) {

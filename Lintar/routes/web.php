@@ -2,10 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\NilaiController;
+use App\Http\Controllers\UtsController;
 use App\Http\Controllers\KhsController;
 use App\Http\Controllers\KehadiranController;
 use App\Http\Controllers\StatusKuliahController;
+use App\Http\Controllers\KalenderController;
+use App\Http\Controllers\JadwalKuliahController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -21,10 +23,13 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [LoginController::class, 'tampilkanRegister']);
 Route::post('/register', [LoginController::class, 'prosesRegister']);
 
-Route::get('/nilai-uts', [NilaiController::class, 'lihatNilaiUTS']);
+Route::get('/nilai-uts', [UtsController::class, 'lihatNilaiUTS']);
 
 Route::get('/nilai-khs', [KhsController::class, 'lihatKHS']);
 
 Route::get('/kehadiran', [KehadiranController::class, 'lihatKehadiran']);
 
 Route::get('/status-kuliah', [StatusKuliahController::class, 'lihatStatusKuliah']);
+
+Route::get('/kalender', [KalenderController::class, 'lihatKalender']);
+Route::get('/jadwal', [JadwalKuliahController::class, 'lihatJadwal']);
