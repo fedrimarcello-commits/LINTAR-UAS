@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\KhsController;
-use App\Http\Controllers\KalenderController;
-use App\Http\Controllers\JadwalKuliahController;
+use App\Http\Controllers\KehadiranController;
+use App\Http\Controllers\StatusKuliahController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -25,6 +25,6 @@ Route::get('/nilai-uts', [NilaiController::class, 'lihatNilaiUTS']);
 
 Route::get('/nilai-khs', [KhsController::class, 'lihatKHS']);
 
-Route::get('/kalender', [KalenderController::class, 'lihatKalender']);
+Route::get('/kehadiran', [KehadiranController::class, 'lihatKehadiran']);
 
-Route::get('/jadwal', [JadwalKuliahController::class, 'lihatJadwal']);
+Route::get('/status-kuliah', [StatusKuliahController::class, 'lihatStatusKuliah']);

@@ -20,12 +20,13 @@
             <td>2</td>
             <td><a href="/nilai-khs">Nilai KHS</a></td>
         </tr>
+        <tr>
             <td>3</td>
-            <td><a href="/kalender">Kalender Akademik</a></td>
+            <td><a href="/kehadiran">Kehadiran</a></td>
         </tr>
-        </tr>
+        <tr>
             <td>4</td>
-            <td><a href="/jadwal">Jadwal Kuliah</a></td>
+            <td><a href="/status-kuliah">Status Kuliah</a></td>
         </tr>
     </table>
     <br>
