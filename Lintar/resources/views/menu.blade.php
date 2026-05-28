@@ -23,6 +23,10 @@
             <td>3</td>
             <td><a href="/kalender">Kalender Akademik</a></td>
         </tr>
+        </tr>
+            <td>4</td>
+            <td><a href="/jadwal">Jadwal Kuliah</a></td>
+        </tr>
     </table>
     <br>
 
