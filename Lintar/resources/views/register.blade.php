@@ -12,6 +12,8 @@
 
     <form method="POST" action="/register">
         @csrf 
+        <label>NIM:</label><br>
+        <input type="text" name="nim" required><br><br>
         Nama Lengkap: <br>
         <input type="text" name="nama" required><br><br>
         Email: <br>

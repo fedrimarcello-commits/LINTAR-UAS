@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\NilaiController;
+use App\Http\Controllers\KhsController;
 
 class LoginController extends Controller
 {
@@ -21,7 +22,7 @@ class LoginController extends Controller
 
         foreach ($semua_user as $user) {
             if ($user->email == $request->email && Hash::check($request->password, $user->password)) {
-                session(['user_aktif' => $user->name]);
+                session(['user_aktif' => $user->name, 'nim_aktif' => $user->nim]);
                 return redirect('/menu'); 
             }
         }
@@ -61,14 +62,22 @@ class LoginController extends Controller
         if ($email_sama != null) {
             return redirect('/register')->with('Errorp', 'Email tersebut sudah terdaftar!');
         }
+        
+        $nim_sama = \App\Models\User::where('nim', $request->nim)->first();
+
+        if ($nim_sama != null) {
+            return redirect('/register')->with('Errorp', 'NIM sudah ada!');
+        }
 
         $user_baru = new User();
+        $user_baru->nim = $request->nim;
         $user_baru->name = $request->nama;
         $user_baru->email = $request->email;
         $user_baru->password = $request->password;
         $user_baru->save();
 
-        NilaiController::membuatNilaiUTS($request->nama);
+        NilaiController::membuatNilaiUTS($request->nim);
+        KhsController::membuatNilaiKHS($request->nim);
 
         return redirect('/login')->with('Sukses', 'Akun berhasil dibuat, Silakan login');
     }
