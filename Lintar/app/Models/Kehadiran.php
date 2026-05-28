@@ -11,7 +11,7 @@ class Kehadiran extends Model
 
     
     protected $table = 'kehadirans';
-    public $timestamps = true;
+    public $timestamps = false;
     protected $fillable = [
         'kode_mk',
         'nama_mk',
