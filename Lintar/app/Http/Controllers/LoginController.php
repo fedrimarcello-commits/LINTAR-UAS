@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Controllers\NilaiController;
+use App\Http\Controllers\UtsController;
 use App\Http\Controllers\KhsController;
 
 class LoginController extends Controller
@@ -76,7 +76,7 @@ class LoginController extends Controller
         $user_baru->password = $request->password;
         $user_baru->save();
 
-        NilaiController::membuatNilaiUTS($request->nim);
+        UtsController::membuatNilaiUTS($request->nim);
         KhsController::membuatNilaiKHS($request->nim);
         KehadiranController::membuatKehadiran($request->nim);
         StatusKuliahController::membuatStatusKuliah($request->nim);

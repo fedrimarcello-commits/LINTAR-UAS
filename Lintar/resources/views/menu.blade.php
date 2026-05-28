@@ -28,6 +28,14 @@
             <td>4</td>
             <td><a href="/status-kuliah">Status Kuliah</a></td>
         </tr>
+        <tr>
+            <td>5</td>
+            <td><a href="/kalender">Kalender Akademik</a></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><a href="/jadwal">Jadwal Kuliah</a></td>
+        </tr>
     </table>
     <br>
 

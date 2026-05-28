@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
     {
         
         User::factory()->create([
+            'nim' => '20260001',
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
@@ -25,6 +26,7 @@ class DatabaseSeeder extends Seeder
         
         $this->call([
             KalenderSeeder::class,
+            JadwalSeeder::class
         ]);
     }
 }
