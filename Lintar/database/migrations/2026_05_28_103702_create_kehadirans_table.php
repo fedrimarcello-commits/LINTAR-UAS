@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('kehadirans', function (Blueprint $table) {
             $table->id();
+            $table->string('nim');
             $table->string('kode_mk');
             $table->string('nama_mk');
             $table->string('kelas');
             $table->integer('jumlah_pertemuan');
             $table->integer('jumlah_kehadiran');
-            
         });
     }
 

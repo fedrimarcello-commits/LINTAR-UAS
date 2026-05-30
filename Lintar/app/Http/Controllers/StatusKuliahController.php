@@ -9,17 +9,43 @@ class StatusKuliahController extends Controller
 {
     public function lihatStatusKuliah()
     {
-        $data_status = StatusKuliah::all();
-        return view('status_kuliah', ['data_status' => $data_status]);
+        if (session('user_aktif') == null) {
+            return redirect('/login');
+        }
+
+        $nim_login = session('nim_aktif');
+        $semua_status = StatusKuliah::all();
+
+        $status_saya = [];
+        foreach ($semua_status as $item) {
+            if ($item->nim == $nim_login) {
+                $status_saya[] = $item;
+            }
+        }
+
+        return view('status_kuliah', ['data_status' => $status_saya]);
     }
 
-public static function membuatStatusKuliah($nim)
+    //Data status kuliah dummy yang langsung dibuat saat register, cuma untuk demo
+    public static function membuatStatusKuliah($nim)
     {
-        StatusKuliah::create([
-            'th_akademik' => 'Gasal 2025', 'status' => 'Aktif', 'sks_ambil' => 20, 'sks_peroleh' => 20, 'ips' => 3.75, 'sks_ambil_kumulatif' => 20, 'sks_peroleh_kumulatif' => 20, 'ipk' => 3.75
-        ]);    
-        StatusKuliah::create([
-            'th_akademik' => 'Genap 2025', 'status' => 'Aktif', 'sks_ambil' => 20, 'sks_peroleh' => 0, 'ips' => 0, 'sks_ambil_kumulatif' => 0, 'sks_peroleh_kumulatif' => 0, 'ipk' => 0
-        ]);
+        $data_status = [
+            ['th_akademik' => 'Gasal 2025', 'status' => 'Aktif', 'sks_ambil' => 20, 'sks_peroleh' => 20, 'ips' => 3.75, 'sks_ambil_kumulatif' => 20, 'sks_peroleh_kumulatif' => 20, 'ipk' => 3.75],
+            ['th_akademik' => 'Genap 2025', 'status' => 'Aktif', 'sks_ambil' => 20, 'sks_peroleh' => 0, 'ips' => 0, 'sks_ambil_kumulatif' => 0, 'sks_peroleh_kumulatif' => 0, 'ipk' => 0]
+        ];
+
+        foreach ($data_status as $row) {
+            $status = new StatusKuliah();
+            $status->nim = $nim;
+            $status->th_akademik = $row['th_akademik'];
+            $status->status = $row['status'];
+            $status->sks_ambil = $row['sks_ambil'];
+            $status->sks_peroleh = $row['sks_peroleh'];
+            $status->ips = $row['ips'];
+            $status->sks_ambil_kumulatif = $row['sks_ambil_kumulatif'];
+            $status->sks_peroleh_kumulatif = $row['sks_peroleh_kumulatif'];
+            $status->ipk = $row['ipk'];
+            $status->save();
+        }
     }
 }
