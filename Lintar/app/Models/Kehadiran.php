@@ -13,6 +13,7 @@ class Kehadiran extends Model
     protected $table = 'kehadirans';
     public $timestamps = false;
     protected $fillable = [
+        'nim',
         'kode_mk',
         'nama_mk',
         'kelas',

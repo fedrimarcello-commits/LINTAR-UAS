@@ -9,8 +9,12 @@ class KalenderController extends Controller
 {
     public function lihatKalender()
     {
+        if (session('user_aktif') == null) {
+            return redirect('/login');
+        }
+
         $kalender = Kalender::all();
 
-        return view('kalender', compact('kalender'));
+        return view('kalender', ['kalender' => $kalender]);
     }
 }

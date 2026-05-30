@@ -2,23 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\NilaiKhs;
 
 class KhsController extends Controller
 {
-public function lihatKHS()
+    public function lihatKHS()
     {
         if (session('user_aktif') == null) {
             return redirect('/login');
         }
+
         $nim_login = session('nim_aktif');
-        $semua_khs = \App\Models\NilaiKhs::all();
+        $semua_khs = NilaiKhs::all();
 
         $khs_saya = [];
         $total_sks = 0;
         $total_bobot = 0;
-        
+
         foreach ($semua_khs as $item) {
             if ($item->nim == $nim_login) {
                 $khs_saya[] = $item;
@@ -38,51 +39,18 @@ public function lihatKHS()
     public static function membuatNilaiKHS($nim)
     {
         $data_khs = [
-            ['kode_mk' => 'TK13030', 
-            'nama_mk' => 'NUMERICAL METHOD', 
-            'status' => 'B', 
-            'sks' => 4, 'huruf' => 'B', 
-            'angka' => '3.00', 'bobot' => '12.00'],
-            ['kode_mk' => 'TK13034', 
-            'nama_mk' => 'OPERATING SYSTEMS', 
-            'status' => 'B', 
-            'sks' => 2, 
-            'huruf' => 'B', 
-            'angka' => '3.00', 
-            'bobot' => '6.00'],
-            ['kode_mk' => 'TK13038', 
-            'nama_mk' => 'ALGEBRA & DISCRETE MATHEMATICS',
-            'status' => 'B', 'sks' => 4, 
-            'huruf' => 'B', 
-            'angka' => '3.00', 
-            'bobot' => '12.00'],
-            ['kode_mk' => 'TK13039', 
-            'nama_mk' => 'INTRODUCTION TO ARTIFICIAL INTELLIGENCE', 
-            'status' => 'B', 
-            'sks' => 2, 
-            'huruf' => 'B', 
-            'angka' => '3.00', 
-            'bobot' => '6.00'],
-            ['kode_mk' => 'TK23007', 
-            'nama_mk' => 'DATA STRUCTURES', 
-            'status' => 'B', 
-            'sks' => 4, 
-            'huruf' => 'B', 
-            'angka' => '3.00', 
-            'bobot' => '12.00'],
-            ['kode_mk' => 'TK23022', 
-            'nama_mk' => 'BACK-END PROGRAMMING', 
-            'status' => 'B', 
-            'sks' => 4, 
-            'huruf' => 'B', 
-            'angka' => '3.00', 
-            'bobot' => '12.00']
+            ['kode' => 'TK13030', 'nama_mk' => 'NUMERICAL METHOD', 'status' => 'B', 'sks' => 4, 'huruf' => 'B', 'angka' => '3.00', 'bobot' => '12.00'],
+            ['kode' => 'TK13034', 'nama_mk' => 'OPERATING SYSTEMS', 'status' => 'B', 'sks' => 2, 'huruf' => 'B', 'angka' => '3.00', 'bobot' => '6.00'],
+            ['kode' => 'TK13038', 'nama_mk' => 'ALGEBRA & DISCRETE MATHEMATICS', 'status' => 'B', 'sks' => 4, 'huruf' => 'B', 'angka' => '3.00', 'bobot' => '12.00'],
+            ['kode' => 'TK13039', 'nama_mk' => 'INTRODUCTION TO ARTIFICIAL INTELLIGENCE', 'status' => 'B', 'sks' => 2, 'huruf' => 'B', 'angka' => '3.00', 'bobot' => '6.00'],
+            ['kode' => 'TK23007', 'nama_mk' => 'DATA STRUCTURES', 'status' => 'B', 'sks' => 4, 'huruf' => 'B', 'angka' => '3.00', 'bobot' => '12.00'],
+            ['kode' => 'TK23022', 'nama_mk' => 'BACK-END PROGRAMMING', 'status' => 'B', 'sks' => 4, 'huruf' => 'B', 'angka' => '3.00', 'bobot' => '12.00']
         ];
 
         foreach ($data_khs as $mk) {
-            $khs = new \App\Models\NilaiKhs();
+            $khs = new NilaiKhs();
             $khs->nim = $nim;
-            $khs->kode_mk = $mk['kode_mk'];
+            $khs->kode_mk = $mk['kode'];
             $khs->nama_mk = $mk['nama_mk'];
             $khs->status = $mk['status'];
             $khs->sks = $mk['sks'];
