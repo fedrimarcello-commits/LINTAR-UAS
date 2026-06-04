@@ -30,12 +30,12 @@ class KehadiranController extends Controller
     public static function membuatKehadiran($nim)
     {
         $data_kehadiran = [
-            ['kode' => 'TK13030', 'nama_mk' => 'NUMERICAL METHOD', 'kelas' => 'A', 'pertemuan' => 12, 'hadir' => 12],
-            ['kode' => 'TK13034', 'nama_mk' => 'OPERATING SYSTEMS', 'kelas' => 'A', 'pertemuan' => 12, 'hadir' => 11],
-            ['kode' => 'TK13038', 'nama_mk' => 'ALGEBRA & DISCRETE MATHEMATICS', 'kelas' => 'A', 'pertemuan' => 13, 'hadir' => 13],
+            ['kode' => 'TK13030', 'nama_mk' => 'NUMERICAL METHOD', 'kelas' => 'A', 'pertemuan' => 0, 'hadir' => 0],
+            ['kode' => 'TK13034', 'nama_mk' => 'OPERATING SYSTEMS', 'kelas' => 'A', 'pertemuan' => 0, 'hadir' => 0],
+            ['kode' => 'TK13038', 'nama_mk' => 'ALGEBRA & DISCRETE MATHEMATICS', 'kelas' => 'A', 'pertemuan' => 0, 'hadir' => 0],
             ['kode' => 'TK13039', 'nama_mk' => 'INTRODUCTION TO ARTIFICIAL INTELLIGENCE', 'kelas' => 'A', 'pertemuan' => 0, 'hadir' => 0],
-            ['kode' => 'TK23007', 'nama_mk' => 'DATA STRUCTURES', 'kelas' => 'A', 'pertemuan' => 9, 'hadir' => 9],
-            ['kode' => 'TK23022', 'nama_mk' => 'BACK-END PROGRAMMING', 'kelas' => 'A', 'pertemuan' => 12, 'hadir' => 12]
+            ['kode' => 'TK23007', 'nama_mk' => 'DATA STRUCTURES', 'kelas' => 'A', 'pertemuan' => 0, 'hadir' => 0],
+            ['kode' => 'TK23022', 'nama_mk' => 'BACK-END PROGRAMMING', 'kelas' => 'A', 'pertemuan' => 0, 'hadir' => 0]
         ];
 
         foreach ($data_kehadiran as $mk) {

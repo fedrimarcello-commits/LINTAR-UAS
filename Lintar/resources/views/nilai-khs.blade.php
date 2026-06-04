@@ -64,7 +64,7 @@
         </tr>
         <tr>
             <td>{{ $total_sks }}</td>
-            <td>*</td>
+            <td>{{ $ips }}</td>
             <td>*</td>
             <td>*</td>
             <td>*</td>

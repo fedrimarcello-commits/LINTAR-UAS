@@ -30,12 +30,12 @@ class UtsController extends Controller
     public static function membuatNilaiUTS($nim)
     {
         $data_nilai = [
-            ['kode' => 'TK13034', 'nama_mk' => 'OPERATING SYSTEMS', 'sks' => 2, 'nilai' => '90.00'],
-            ['kode' => 'TK23007', 'nama_mk' => 'DATA STRUCTURES', 'sks' => 4, 'nilai' => '70.00'],
+            ['kode' => 'TK13034', 'nama_mk' => 'OPERATING SYSTEMS', 'sks' => 2, 'nilai' => null],
+            ['kode' => 'TK23007', 'nama_mk' => 'DATA STRUCTURES', 'sks' => 4, 'nilai' => null],
             ['kode' => 'TK13030', 'nama_mk' => 'NUMERICAL METHOD', 'sks' => 4, 'nilai' => null],
-            ['kode' => 'TK13038', 'nama_mk' => 'ALGEBRA & DISCRETE MATHEMATICS', 'sks' => 4, 'nilai' => '85.00'],
-            ['kode' => 'TK13039', 'nama_mk' => 'INTRODUCTION TO ARTIFICIAL INTELLIGENCE', 'sks' => 2, 'nilai' => '85.00'],
-            ['kode' => 'TK23022', 'nama_mk' => 'BACK-END PROGRAMMING', 'sks' => 4, 'nilai' => '87.00']
+            ['kode' => 'TK13038', 'nama_mk' => 'ALGEBRA & DISCRETE MATHEMATICS', 'sks' => 4, 'nilai' => null],
+            ['kode' => 'TK13039', 'nama_mk' => 'INTRODUCTION TO ARTIFICIAL INTELLIGENCE', 'sks' => 2, 'nilai' => null],
+            ['kode' => 'TK23022', 'nama_mk' => 'BACK-END PROGRAMMING', 'sks' => 4, 'nilai' => null]
         ];
 
         foreach ($data_nilai as $mk) {

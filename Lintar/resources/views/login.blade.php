@@ -11,7 +11,10 @@
     @endif
 
     <form method="POST" action="/login">
-        @csrf 
+        @csrf
+        Login sebagai: <br>
+        <input type="radio" name="peran" value="mahasiswa" checked onclick="document.getElementById('daftar').style.display='block'"> Mahasiswa
+        <input type="radio" name="peran" value="dosen" onclick="document.getElementById('daftar').style.display='none'"> Dosen<br><br>
         Email: <br>
         <input type="email" name="email" required><br><br>
         Password: <br>
@@ -19,6 +22,6 @@
         <button type="submit">Masuk</button>
     </form>
     <br>
-    <p><a href="/register">Belum Punya Akun ? Buat akun baru</a></p>
+    <p id="daftar"><a href="/register">Belum Punya Akun ? Buat akun baru</a></p>
     </body>
 </html>
