@@ -8,6 +8,7 @@ use App\Http\Controllers\KehadiranController;
 use App\Http\Controllers\StatusKuliahController;
 use App\Http\Controllers\KalenderController;
 use App\Http\Controllers\JadwalKuliahController;
+use App\Http\Controllers\DosenController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -33,3 +34,14 @@ Route::get('/status-kuliah', [StatusKuliahController::class, 'lihatStatusKuliah'
 
 Route::get('/kalender', [KalenderController::class, 'lihatKalender']);
 Route::get('/jadwal', [JadwalKuliahController::class, 'lihatJadwal']);
+
+Route::get('/dosen', [DosenController::class, 'menuDosen']);
+
+Route::get('/dosen/uts', [DosenController::class, 'inputUts']);
+Route::post('/dosen/uts', [DosenController::class, 'simpanUts']);
+
+Route::get('/dosen/khs', [DosenController::class, 'inputKhs']);
+Route::post('/dosen/khs', [DosenController::class, 'simpanKhs']);
+
+Route::get('/dosen/kehadiran', [DosenController::class, 'inputKehadiran']);
+Route::post('/dosen/kehadiran', [DosenController::class, 'simpanKehadiran']);

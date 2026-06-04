@@ -19,7 +19,15 @@ class LoginController extends Controller
 
         foreach ($semua_user as $user) {
             if ($user->email == $request->email && Hash::check($request->password, $user->password)) {
-                session(['user_aktif' => $user->name, 'nim_aktif' => $user->nim]);
+                if ($user->peran != $request->peran) {
+                    return redirect('/login')->with('Error', 'Pilihan login tidak sesuai dengan akun!');
+                }
+
+                session(['user_aktif' => $user->name, 'nim_aktif' => $user->nim, 'peran_aktif' => $user->peran]);
+
+                if ($user->peran == 'dosen') {
+                    return redirect('/dosen');
+                }
                 return redirect('/menu');
             }
         }
@@ -39,7 +47,7 @@ class LoginController extends Controller
 
     public function logout()
     {
-        session(['user_aktif' => null]);
+        session(['user_aktif' => null, 'peran_aktif' => null]);
         return redirect('/login');
     }
 
@@ -70,6 +78,7 @@ class LoginController extends Controller
         $user_baru->name = $request->nama;
         $user_baru->email = $request->email;
         $user_baru->password = $request->password;
+        $user_baru->peran = 'mahasiswa';
         $user_baru->save();
 
         UtsController::membuatNilaiUTS($request->nim);

@@ -23,7 +23,15 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
-        
+        $dosen = new User();
+        $dosen->nim = '0';
+        $dosen->name = 'Dosen';
+        $dosen->email = 'dosen@untar.com';
+        $dosen->password = 'dosen123';
+        $dosen->peran = 'dosen';
+        $dosen->save();
+
+
         $this->call([
             KalenderSeeder::class,
             JadwalSeeder::class

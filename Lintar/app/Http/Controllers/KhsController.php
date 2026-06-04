@@ -28,10 +28,16 @@ class KhsController extends Controller
             }
         }
 
+        $ips = 0;
+        if ($total_sks > 0) {
+            $ips = round($total_bobot / $total_sks, 2);
+        }
+
         return view('nilai-khs', [
             'data_khs' => $khs_saya,
             'total_sks' => $total_sks,
-            'total_bobot' => $total_bobot
+            'total_bobot' => $total_bobot,
+            'ips' => $ips
         ]);
     }
 
@@ -39,12 +45,12 @@ class KhsController extends Controller
     public static function membuatNilaiKHS($nim)
     {
         $data_khs = [
-            ['kode' => 'TK13030', 'nama_mk' => 'NUMERICAL METHOD', 'status' => 'B', 'sks' => 4, 'huruf' => 'B', 'angka' => '3.00', 'bobot' => '12.00'],
-            ['kode' => 'TK13034', 'nama_mk' => 'OPERATING SYSTEMS', 'status' => 'B', 'sks' => 2, 'huruf' => 'B', 'angka' => '3.00', 'bobot' => '6.00'],
-            ['kode' => 'TK13038', 'nama_mk' => 'ALGEBRA & DISCRETE MATHEMATICS', 'status' => 'B', 'sks' => 4, 'huruf' => 'B', 'angka' => '3.00', 'bobot' => '12.00'],
-            ['kode' => 'TK13039', 'nama_mk' => 'INTRODUCTION TO ARTIFICIAL INTELLIGENCE', 'status' => 'B', 'sks' => 2, 'huruf' => 'B', 'angka' => '3.00', 'bobot' => '6.00'],
-            ['kode' => 'TK23007', 'nama_mk' => 'DATA STRUCTURES', 'status' => 'B', 'sks' => 4, 'huruf' => 'B', 'angka' => '3.00', 'bobot' => '12.00'],
-            ['kode' => 'TK23022', 'nama_mk' => 'BACK-END PROGRAMMING', 'status' => 'B', 'sks' => 4, 'huruf' => 'B', 'angka' => '3.00', 'bobot' => '12.00']
+            ['kode' => 'TK13030', 'nama_mk' => 'NUMERICAL METHOD', 'status' => 'B', 'sks' => 4, 'huruf' => null, 'angka' => null, 'bobot' => null],
+            ['kode' => 'TK13034', 'nama_mk' => 'OPERATING SYSTEMS', 'status' => 'B', 'sks' => 2, 'huruf' => null, 'angka' => null, 'bobot' => null],
+            ['kode' => 'TK13038', 'nama_mk' => 'ALGEBRA & DISCRETE MATHEMATICS', 'status' => 'B', 'sks' => 4, 'huruf' => null, 'angka' => null, 'bobot' => null],
+            ['kode' => 'TK13039', 'nama_mk' => 'INTRODUCTION TO ARTIFICIAL INTELLIGENCE', 'status' => 'B', 'sks' => 2, 'huruf' => null, 'angka' => null, 'bobot' => null],
+            ['kode' => 'TK23007', 'nama_mk' => 'DATA STRUCTURES', 'status' => 'B', 'sks' => 4, 'huruf' => null, 'angka' => null, 'bobot' => null],
+            ['kode' => 'TK23022', 'nama_mk' => 'BACK-END PROGRAMMING', 'status' => 'B', 'sks' => 4, 'huruf' => null, 'angka' => null, 'bobot' => null]
         ];
 
         foreach ($data_khs as $mk) {
