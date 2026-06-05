@@ -36,6 +36,10 @@
             <td>6</td>
             <td><a href="/jadwal">Jadwal Kuliah</a></td>
         </tr>
+        <tr>
+            <td>7</td>
+            <td><a href="/biodata">Biodata</a></td>
+        </tr>
     </table>
     <br>
 
