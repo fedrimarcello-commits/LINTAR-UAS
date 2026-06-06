@@ -40,6 +40,10 @@
             <td>7</td>
             <td><a href="/biodata">Biodata</a></td>
         </tr>
+        <tr>
+            <td>8</td>
+            <td><a href="/ubah-password">Ubah Password</a></td>
+        </tr>
     </table>
     <br>
 

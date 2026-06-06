@@ -51,6 +51,49 @@ class LoginController extends Controller
         return redirect('/login');
     }
 
+    public function tampilkanUbahPassword()
+    {
+        if (session('user_aktif') == null) {
+            return redirect('/login');
+        }
+
+        return view('ubah_password');
+    }
+
+    public function prosesUbahPassword(Request $request)
+    {
+        if (session('user_aktif') == null) {
+            return redirect('/login');
+        }
+
+        $nim_login = session('nim_aktif');
+        $semua_user = User::all();
+
+        $user_saya = null;
+        foreach ($semua_user as $user) {
+            if ($user->nim == $nim_login) {
+                $user_saya = $user;
+            }
+        }
+
+        if (Hash::check($request->password_lama, $user_saya->password) == false) {
+            return redirect('/ubah-password')->with('Error', 'Password lama salah!');
+        }
+
+        if (strlen($request->password_baru) < 8) {
+            return redirect('/ubah-password')->with('Error', 'Password baru minimal 8 karakter');
+        }
+
+        if ($request->password_baru != $request->konfirmasi) {
+            return redirect('/ubah-password')->with('Error', 'Konfirmasi password tidak sama!');
+        }
+
+        $user_saya->password = $request->password_baru;
+        $user_saya->save();
+
+        return redirect('/ubah-password')->with('Sukses', 'Password berhasil diubah');
+    }
+
     public function tampilkanRegister()
     {
         return view('register');

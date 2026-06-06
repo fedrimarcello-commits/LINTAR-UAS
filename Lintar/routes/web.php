@@ -40,6 +40,9 @@ Route::get('/biodata', [BiodataController::class, 'lihatBiodata']);
 Route::get('/biodata/isi', [BiodataController::class, 'isiBiodata']);
 Route::post('/biodata/isi', [BiodataController::class, 'simpanBiodata']);
 
+Route::get('/ubah-password', [LoginController::class, 'tampilkanUbahPassword']);
+Route::post('/ubah-password', [LoginController::class, 'prosesUbahPassword']);
+
 Route::get('/dosen', [DosenController::class, 'menuDosen']);
 
 Route::get('/dosen/uts', [DosenController::class, 'inputUts']);
