@@ -10,6 +10,7 @@ use App\Http\Controllers\KalenderController;
 use App\Http\Controllers\JadwalKuliahController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\BiodataController;
+use App\Http\Controllers\NoHpController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -39,6 +40,8 @@ Route::get('/jadwal', [JadwalKuliahController::class, 'lihatJadwal']);
 Route::get('/biodata', [BiodataController::class, 'lihatBiodata']);
 Route::get('/biodata/isi', [BiodataController::class, 'isiBiodata']);
 Route::post('/biodata/isi', [BiodataController::class, 'simpanBiodata']);
+Route::get('/ubah-nohp', [NoHpController::class, 'ubahNoHp']);
+Route::post('/ubah-nohp', [NoHpController::class, 'simpanNoHp']);
 
 Route::get('/ubah-password', [LoginController::class, 'tampilkanUbahPassword']);
 Route::post('/ubah-password', [LoginController::class, 'prosesUbahPassword']);
