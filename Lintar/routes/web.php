@@ -11,6 +11,7 @@ use App\Http\Controllers\JadwalKuliahController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\NoHpController;
+use App\Http\Controllers\KsmController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -42,6 +43,8 @@ Route::get('/biodata/isi', [BiodataController::class, 'isiBiodata']);
 Route::post('/biodata/isi', [BiodataController::class, 'simpanBiodata']);
 Route::get('/ubah-nohp', [NoHpController::class, 'ubahNoHp']);
 Route::post('/ubah-nohp', [NoHpController::class, 'simpanNoHp']);
+
+Route::get('/ksm', [KsmController::class, 'lihatKsm']);
 
 Route::get('/ubah-password', [LoginController::class, 'tampilkanUbahPassword']);
 Route::post('/ubah-password', [LoginController::class, 'prosesUbahPassword']);
