@@ -52,6 +52,10 @@
             <td>10</td>
             <td><a href="/ksm">Kartu Studi Mahasiswa</a></td>
         </tr>
+        <tr>
+            <td>11</td>
+            <td><a href="/lengkapi-data">Lengkapi Data</a></td>
+        </tr>
     </table>
     <br>
 
