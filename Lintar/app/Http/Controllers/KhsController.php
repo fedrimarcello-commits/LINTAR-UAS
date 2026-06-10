@@ -41,7 +41,6 @@ class KhsController extends Controller
         ]);
     }
 
-    //Membuat Nilai dummy untuk KHS yg langsung dibuat saat register, cuma untuk demo
     public static function membuatNilaiKHS($nim)
     {
         $data_khs = [

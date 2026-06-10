@@ -56,6 +56,10 @@
             <td>11</td>
             <td><a href="/lengkapi-data">Lengkapi Data</a></td>
         </tr>
+        <tr>
+            <td>12</td>
+            <td><a href="/laporan-beasiswa">Laporan Beasiswa</a></td>
+        </tr>
     </table>
     <br>
 

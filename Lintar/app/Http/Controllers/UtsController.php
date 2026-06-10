@@ -26,7 +26,6 @@ class UtsController extends Controller
         return view('nilai-uts', ['data_nilai' => $nilai_saya]);
     }
 
-    //Data Nilai ini adalah dummy yang langsung dibuat untuk jadi contoh Demo saja, karena siswa tidak input nilai
     public static function membuatNilaiUTS($nim)
     {
         $data_nilai = [
