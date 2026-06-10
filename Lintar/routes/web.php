@@ -13,6 +13,7 @@ use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\NoHpController;
 use App\Http\Controllers\KsmController;
 use App\Http\Controllers\LengkapiDataController;
+use App\Http\Controllers\LaporanBeasiswaController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -48,6 +49,8 @@ Route::post('/ubah-nohp', [NoHpController::class, 'simpanNoHp']);
 Route::get('/ksm', [KsmController::class, 'lihatKsm']);
 
 Route::get('/lengkapi-data', [LengkapiDataController::class, 'lengkapiData']);
+
+Route::get('/laporan-beasiswa', [LaporanBeasiswaController::class, 'lihatBeasiswa']);
 
 Route::get('/ubah-password', [LoginController::class, 'tampilkanUbahPassword']);
 Route::post('/ubah-password', [LoginController::class, 'prosesUbahPassword']);
