@@ -60,6 +60,10 @@
             <td>12</td>
             <td><a href="/laporan-beasiswa">Laporan Beasiswa</a></td>
         </tr>
+        <tr>
+            <td>13</td>
+            <td><a href="/bahan-ajar">Bahan Ajar</a></td>
+        </tr>
     </table>
     <br>
 
