@@ -15,6 +15,7 @@ use App\Http\Controllers\KsmController;
 use App\Http\Controllers\LengkapiDataController;
 use App\Http\Controllers\LaporanBeasiswaController;
 use App\Http\Controllers\BahanAjarController;
+use App\Http\Controllers\KonsultasiPaController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -68,3 +69,6 @@ Route::get('/dosen/kehadiran', [DosenController::class, 'inputKehadiran']);
 Route::post('/dosen/kehadiran', [DosenController::class, 'simpanKehadiran']);
 
 Route::get('/bahan-ajar', [BahanAjarController::class, 'lihatBahanAjar']);
+
+Route::get('/konsultasi-pa', [KonsultasiPaController::class, 'lihatKonsultasiPa']);
+Route::post('/konsultasi-pa', [KonsultasiPaController::class, 'kirimPesan']);
