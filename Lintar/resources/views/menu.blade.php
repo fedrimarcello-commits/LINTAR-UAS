@@ -64,6 +64,10 @@
             <td>13</td>
             <td><a href="/bahan-ajar">Bahan Ajar</a></td>
         </tr>
+        <tr>
+            <td>14</td>
+            <td><a href="/konsultasi-pa">Konsultasi PA</a></td>
+        </tr>
     </table>
     <br>
 
