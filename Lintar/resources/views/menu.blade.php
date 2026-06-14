@@ -68,6 +68,10 @@
             <td>14</td>
             <td><a href="/konsultasi-pa">Konsultasi PA</a></td>
         </tr>
+        <tr>
+            <td>15</td>
+            <td><a href="/konsultasi-psikologi">Konsultasi Psikologi</a></td>
+        </tr>
     </table>
     <br>
 

@@ -16,6 +16,7 @@ use App\Http\Controllers\LengkapiDataController;
 use App\Http\Controllers\LaporanBeasiswaController;
 use App\Http\Controllers\BahanAjarController;
 use App\Http\Controllers\KonsultasiPaController;
+use App\Http\Controllers\KonsultasiPsikologiController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -72,3 +73,5 @@ Route::get('/bahan-ajar', [BahanAjarController::class, 'lihatBahanAjar']);
 
 Route::get('/konsultasi-pa', [KonsultasiPaController::class, 'lihatKonsultasiPa']);
 Route::post('/konsultasi-pa', [KonsultasiPaController::class, 'kirimPesan']);
+
+Route::get('/konsultasi-psikologi', [KonsultasiPsikologiController::class, 'lihatKonsultasiPsikologi']);
