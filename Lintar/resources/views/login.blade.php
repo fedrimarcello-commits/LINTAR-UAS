@@ -13,8 +13,8 @@
     <form method="POST" action="/login">
         @csrf
         Login sebagai: <br>
-        <input type="radio" name="peran" value="mahasiswa" checked onclick="document.getElementById('daftar').style.display='block'"> Mahasiswa
-        <input type="radio" name="peran" value="dosen" onclick="document.getElementById('daftar').style.display='none'"> Dosen<br><br>
+        <input type="radio" name="peran" value="mahasiswa" checked> Mahasiswa
+        <input type="radio" name="peran" value="dosen"> Dosen<br><br>
         Email: <br>
         <input type="email" name="email" required><br><br>
         Password: <br>
@@ -22,6 +22,6 @@
         <button type="submit">Masuk</button>
     </form>
     <br>
-    <p id="daftar"><a href="/register">Belum Punya Akun ? Buat akun baru</a></p>
+    <p><a href="/register">Belum Punya Akun ? Buat akun baru</a></p>
     </body>
 </html>
