@@ -72,6 +72,10 @@
             <td>15</td>
             <td><a href="/konsultasi-psikologi">Konsultasi Psikologi</a></td>
         </tr>
+        <tr>
+            <td>16</td>
+            <td><a href="/surat-perjanjian">Surat Perjanjian</a></td>
+        </tr>
     </table>
     <br>
 
