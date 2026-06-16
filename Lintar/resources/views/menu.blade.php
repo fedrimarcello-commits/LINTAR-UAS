@@ -76,6 +76,10 @@
             <td>16</td>
             <td><a href="/surat-perjanjian">Surat Perjanjian</a></td>
         </tr>
+        <tr>
+            <td>17</td>
+            <td><a href="/daftar-beasiswa">Daftar Beasiswa</a></td>
+        </tr>
     </table>
     <br>
 
