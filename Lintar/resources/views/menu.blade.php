@@ -80,6 +80,10 @@
             <td>17</td>
             <td><a href="/daftar-beasiswa">Daftar Beasiswa</a></td>
         </tr>
+        <tr>
+            <td>18</td>
+            <td><a href="/status-daftar">Status Daftar</a></td>
+        </tr>
     </table>
     <br>
 
