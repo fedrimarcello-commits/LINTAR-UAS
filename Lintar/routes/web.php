@@ -20,6 +20,7 @@ use App\Http\Controllers\KonsultasiPsikologiController;
 use App\Http\Controllers\SuratPerjanjianController;
 use App\Http\Controllers\DaftarBeasiswaController;
 use App\Http\Controllers\StatusDaftarController;
+use App\Http\Controllers\LihatHasilController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -84,3 +85,5 @@ Route::get('/surat-perjanjian', [SuratPerjanjianController::class, 'lihatSuratPe
 Route::get('/daftar-beasiswa', [DaftarBeasiswaController::class, 'lihatDaftarBeasiswa']);
 
 Route::get('/status-daftar', [StatusDaftarController::class, 'lihatStatusDaftar']);
+
+Route::get('/lihat-hasil', [LihatHasilController::class, 'lihatHasil']);

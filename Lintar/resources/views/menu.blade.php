@@ -84,6 +84,10 @@
             <td>18</td>
             <td><a href="/status-daftar">Status Daftar</a></td>
         </tr>
+        <tr>
+            <td>19</td>
+            <td><a href="/lihat-hasil">Lihat Hasil</a></td>
+        </tr>
     </table>
     <br>
 
