@@ -86,7 +86,11 @@
         </tr>
         <tr>
             <td>19</td>
-            <td><a href="/lihat-hasil">Lihat Hasil</a></td>
+            <td><a href="/lihat-hasil">Info Hasil</a></td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td><a href="/unggah-file">Upload Berkas</a></td>
         </tr>
     </table>
     <br>
