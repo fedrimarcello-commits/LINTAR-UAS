@@ -4,100 +4,75 @@
     <title>Lintar MAHASISWA</title>
 </head>
 <body>
-    <h1>Menu Utama</h1>
+    <h1>Halaman Utama</h1>
     <h2>{{ $nama }}</h2>
 
-    <table border="1">
-        <tr>
-            <th>No</th>
-            <th>Menu Akademik</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td><a href="/nilai-uts">Nilai UTS</a></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><a href="/nilai-khs">Nilai KHS</a></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><a href="/kehadiran">Kehadiran</a></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><a href="/status-kuliah">Status Kuliah</a></td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td><a href="/kalender">Kalender Akademik</a></td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td><a href="/jadwal">Jadwal Kuliah</a></td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td><a href="/biodata">Biodata</a></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td><a href="/ubah-password">Ubah Password</a></td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td><a href="/ubah-nohp">Ubah No HP</a></td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td><a href="/ksm">Kartu Studi Mahasiswa</a></td>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td><a href="/lengkapi-data">Lengkapi Data</a></td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td><a href="/laporan-beasiswa">Laporan Beasiswa</a></td>
-        </tr>
-        <tr>
-            <td>13</td>
-            <td><a href="/bahan-ajar">Bahan Ajar</a></td>
-        </tr>
-        <tr>
-            <td>14</td>
-            <td><a href="/konsultasi-pa">Konsultasi PA</a></td>
-        </tr>
-        <tr>
-            <td>15</td>
-            <td><a href="/konsultasi-psikologi">Konsultasi Psikologi</a></td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td><a href="/surat-perjanjian">Surat Perjanjian</a></td>
-        </tr>
-        <tr>
-            <td>17</td>
-            <td><a href="/daftar-beasiswa">Daftar Beasiswa</a></td>
-        </tr>
-        <tr>
-            <td>18</td>
-            <td><a href="/status-daftar">Status Daftar</a></td>
-        </tr>
-        <tr>
-            <td>19</td>
-            <td><a href="/lihat-hasil">Info Hasil</a></td>
-        </tr>
-        <tr>
-            <td>20</td>
-            <td><a href="/unggah-file">Upload Berkas</a></td>
-        </tr>
-    </table>
-    <br>
+    <details>
+        <summary>Akademik</summary>
+        <ul>
+            <li><a href="/jadwal">Jadwal Kuliah</a></li>
+            <li><a href="/kalender">Kalender Akademik</a></li>
+            <li><a href="/ksm">Kartu Studi Mahasiswa</a></li>
+            <li><a href="/kehadiran">Kehadiran</a></li>
+            <li><a href="/nilai-khs">Nilai KHS</a></li>
+            <li><a href="/nilai-uts">Nilai UTS</a></li>
+            <li><a href="/status-kuliah">Status Kuliah</a></li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Beasiswa</summary>
+        <ul>
+            <li><a href="/daftar-beasiswa">1.Daftar Beasiswa</a></li>
+            <li><a href="/biodata">2.Biodata</a></li>
+            <li><a href="/status-daftar">3.Status Daftar</a></li>
+            <li><a href="/lihat-hasil">4.Info Hasil</a></li>
+            <li><a href="/unggah-file">5.Upload Berkas</a></li>
+            <li><a href="/surat-perjanjian">6.Surat Perjanjian & PKM</a></li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Beasiswa Eksternal</summary>
+        <ul>
+            <li><a href="/laporan-beasiswa">Laporan Beasiswa</a></li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Biodata</summary>
+        <ul>
+            <li><a href="/biodata">Biodata</a></li>
+            <li><a href="/lengkapi-data">Lengkapi Data</a></li>
+            <li><a href="/ubah-nohp">Ubah No Hp</a></li>
+            <li><a href="/ubah-password">Ubah Password</a></li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Konsuling PA</summary>
+        <ul>
+            <li><a href="/konsultasi-pa">Konsultasi</a></li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Konsultasi Psikologi</summary>
+        <ul>
+            <li><a href="/konsultasi-psikologi">Konsultasi</a></li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Perkuliahan</summary>
+        <ul>
+            <li><a href="/bahan-ajar">03.Bahan Ajar</a></li>
+        </ul>
+    </details>
 
     <form method="POST" action="/logout">
         @csrf
-        <button type="submit">Keluar</button>
+        <button type="submit">Logout</button>
     </form>
 </body>
 </html>
