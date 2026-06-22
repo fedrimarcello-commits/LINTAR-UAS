@@ -7,6 +7,8 @@
     <h1>Halaman Utama</h1>
     <h2>{{ $nama }}</h2>
 
+    <p><a href="/halaman-utama">Halaman Utama</a></p>
+
     <details>
         <summary>Akademik</summary>
         <ul>
@@ -50,6 +52,10 @@
     </details>
 
     <details>
+        <summary>Cuti Online</summary>
+    </details>
+
+    <details>
         <summary>Konsuling PA</summary>
         <ul>
             <li><a href="/konsultasi-pa">Konsultasi</a></li>
@@ -64,10 +70,62 @@
     </details>
 
     <details>
+        <summary>KRRS ONLINE</summary>
+    </details>
+
+    <details>
+        <summary>Layanan Mahasiswa</summary>
+    </details>
+
+    <details>
+        <summary>MBKM</summary>
+    </details>
+
+    <details>
         <summary>Perkuliahan</summary>
         <ul>
             <li><a href="/bahan-ajar">03.Bahan Ajar</a></li>
         </ul>
+    </details>
+
+    <details>
+        <summary>Perpustakaan</summary>
+    </details>
+
+    <details>
+        <summary>Registrasi</summary>
+    </details>
+
+    <details>
+        <summary>Remedial</summary>
+    </details>
+
+    <details>
+        <summary>SKPI</summary>
+    </details>
+
+    <details>
+        <summary>Tugas Akhir</summary>
+    </details>
+
+    <details>
+        <summary>Uang Kuliah</summary>
+    </details>
+
+    <details>
+        <summary>UAS Online</summary>
+    </details>
+
+    <details>
+        <summary>UTS Online</summary>
+    </details>
+
+    <details>
+        <summary>Wisuda</summary>
+    </details>
+
+    <details>
+        <summary>Yudisium Online</summary>
     </details>
 
     <form method="POST" action="/logout">
