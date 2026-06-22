@@ -37,6 +37,23 @@
     </form>
 
     <br>
+    <h3>Riwayat Konsultasi</h3>
+    <table border="1">
+        <tr>
+            <th>No</th>
+            <th>Waktu</th>
+            <th>Pesan</th>
+        </tr>
+        @foreach($riwayat as $index => $item)
+        <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ $item->waktu }}</td>
+            <td>{{ $item->isi }}</td>
+        </tr>
+        @endforeach
+    </table>
+
+    <br>
     <a href="/menu">Kembali</a>
 
 </body>

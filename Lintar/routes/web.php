@@ -22,6 +22,7 @@ use App\Http\Controllers\DaftarBeasiswaController;
 use App\Http\Controllers\StatusDaftarController;
 use App\Http\Controllers\LihatHasilController;
 use App\Http\Controllers\UnggahFileController;
+use App\Http\Controllers\HalamanUtamaController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -90,3 +91,5 @@ Route::get('/status-daftar', [StatusDaftarController::class, 'lihatStatusDaftar'
 Route::get('/lihat-hasil', [LihatHasilController::class, 'lihatHasil']);
 
 Route::get('/unggah-file', [UnggahFileController::class, 'lihatUnggahFile']);
+
+Route::get('/halaman-utama', [HalamanUtamaController::class, 'lihatHalamanUtama']);
