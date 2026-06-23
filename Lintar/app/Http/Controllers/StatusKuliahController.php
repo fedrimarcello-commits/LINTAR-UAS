@@ -26,7 +26,6 @@ class StatusKuliahController extends Controller
         return view('status_kuliah', ['data_status' => $status_saya]);
     }
 
-    //Data status kuliah dummy yang langsung dibuat saat register, cuma untuk demo
     public static function membuatStatusKuliah($nim)
     {
         $data_status = [

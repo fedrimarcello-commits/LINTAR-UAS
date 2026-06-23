@@ -79,6 +79,7 @@ Route::get('/bahan-ajar', [BahanAjarController::class, 'lihatBahanAjar']);
 
 Route::get('/konsultasi-pa', [KonsultasiPaController::class, 'lihatKonsultasiPa']);
 Route::post('/konsultasi-pa', [KonsultasiPaController::class, 'kirimPesan']);
+Route::post('/konsultasi-pa/hapus', [KonsultasiPaController::class, 'hapusPesan']);
 
 Route::get('/konsultasi-psikologi', [KonsultasiPsikologiController::class, 'lihatKonsultasiPsikologi']);
 

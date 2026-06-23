@@ -41,4 +41,18 @@ class KonsultasiPaController extends Controller
 
         return redirect('/konsultasi-pa')->with('Sukses', 'Pesan berhasil dikirim');
     }
+
+    public function hapusPesan(Request $request)
+    {
+        if (session('user_aktif') == null) {
+            return redirect('/login');
+        }
+
+        $konsultasi = KonsultasiPa::find($request->id);
+        if ($konsultasi != null && $konsultasi->nim == session('nim_aktif')) {
+            $konsultasi->delete();
+        }
+
+        return redirect('/konsultasi-pa')->with('Sukses', 'Pesan berhasil dihapus');
+    }
 }

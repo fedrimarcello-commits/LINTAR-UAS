@@ -22,6 +22,6 @@
         <button type="submit">Masuk</button>
     </form>
     <br>
-    <p><a href="/register">Belum Punya Akun ? Buat akun baru</a></p>
+    <p><a href="/register">Buat akun baru</a></p>
     </body>
 </html>

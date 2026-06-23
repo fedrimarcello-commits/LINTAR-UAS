@@ -42,7 +42,7 @@ class KhsController extends Controller
     }
 
     public static function membuatNilaiKHS($nim)
-    {
+{
         $data_khs = [
             ['kode' => 'TK13030', 'nama_mk' => 'NUMERICAL METHOD', 'status' => 'B', 'sks' => 4, 'huruf' => null, 'angka' => null, 'bobot' => null],
             ['kode' => 'TK13034', 'nama_mk' => 'OPERATING SYSTEMS', 'status' => 'B', 'sks' => 2, 'huruf' => null, 'angka' => null, 'bobot' => null],
