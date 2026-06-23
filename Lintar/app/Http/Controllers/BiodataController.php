@@ -78,6 +78,14 @@ class BiodataController extends Controller
             return redirect('/biodata');
         }
 
+        if ($request->no_rekening == null || $request->tempat_lahir == null || $request->tanggal_lahir == null || $request->jenis_kelamin == null || $request->agama == null || $request->alamat == null || $request->telepon == null || $request->handphone == null || $request->asal_sekolah == null || $request->no_ijazah == null || $request->tgl_ijazah == null || $request->nama_ortu == null || $request->alamat_ortu == null || $request->telepon_ortu == null) {
+            return redirect('/biodata/isi')->with('Error', 'Semua data wajib diisi');
+        }
+
+        if (is_numeric($request->no_rekening) == false || is_numeric($request->telepon) == false || is_numeric($request->handphone) == false || is_numeric($request->telepon_ortu) == false) {
+            return redirect('/biodata/isi')->with('Error', 'No Rekening, Telepon, dan Handphone harus berupa angka');
+        }
+
         $biodata_baru = new Biodata();
         $biodata_baru->nim = $nim_login;
         $biodata_baru->no_rekening = $request->no_rekening;

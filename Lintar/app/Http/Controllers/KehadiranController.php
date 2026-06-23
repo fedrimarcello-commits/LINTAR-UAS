@@ -26,7 +26,6 @@ class KehadiranController extends Controller
         return view('kehadiran', ['data_kehadiran' => $kehadiran_saya]);
     }
 
-    //Data kehadiran dummy yang langsung dibuat saat register, cuma untuk demo
     public static function membuatKehadiran($nim)
     {
         $data_kehadiran = [

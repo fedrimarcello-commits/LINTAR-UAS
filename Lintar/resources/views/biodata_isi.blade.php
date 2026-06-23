@@ -9,6 +9,10 @@
     <p>Nama : {{ session('user_aktif') }}</p>
     <p>Biodata hanya dapat diisi satu kali dan tidak bisa diubah lagi.</p>
 
+    @if(session('Error'))
+        <p>{{ session('Error') }}</p>
+    @endif
+
     <form method="POST" action="/biodata/isi">
         @csrf
         No. Rekening: <br>

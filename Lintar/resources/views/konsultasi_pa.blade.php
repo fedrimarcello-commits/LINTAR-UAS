@@ -43,12 +43,20 @@
             <th>No</th>
             <th>Waktu</th>
             <th>Pesan</th>
+            <th>Aksi</th>
         </tr>
         @foreach($riwayat as $index => $item)
         <tr>
             <td>{{ $index + 1 }}</td>
             <td>{{ $item->waktu }}</td>
             <td>{{ $item->isi }}</td>
+            <td>
+                <form method="POST" action="/konsultasi-pa/hapus">
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $item->id }}">
+                    <button type="submit">Hapus</button>
+                </form>
+            </td>
         </tr>
         @endforeach
     </table>

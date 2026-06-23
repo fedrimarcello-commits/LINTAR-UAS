@@ -23,6 +23,6 @@
         <button type="submit">Daftar Sekarang</button>
     </form>
     <br>
-    <a href="/login">Sudah punya akun? Kembali ke Login</a>
+    <a href="/login">Kembali ke Login</a>
 </body>
 </html>
